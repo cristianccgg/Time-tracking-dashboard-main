@@ -8,11 +8,13 @@ const dailyBtn = document.getElementById("daily-btn");
 const weeklyBtn = document.getElementById("weekly-btn");
 const monthlyBtn = document.getElementById("monthly-btn");
 
+let cardData = [];
+
 async function fetchCardData() {
   const response = await fetch("./data.json");
-  const cardData = await response.json();
+  const data = await response.json();
 
-  const processedData = cardData.map((item) => {
+  cardData = data.map((item) => {
     return {
       title: item.title,
       dailyCurrent: item.timeframes.daily.current,
@@ -23,27 +25,49 @@ async function fetchCardData() {
       monthlyPrevious: item.timeframes.monthly.previous,
     };
   });
-  console.log(processedData);
+  updateUI("weekly");
 }
+
+function updateUI(timeframe) {
+  cardData.forEach((item) => {
+    const current = `${timeframe}Current`;
+    const previous = `${timeframe}Previous`;
+
+    let div;
+    switch (item.title) {
+      case "Work":
+        div = workDiv;
+        break;
+      case "Play":
+        div = playDiv;
+        break;
+      case "Study":
+        div = studyDiv;
+        break;
+      case "Exercise":
+        div = exerciseDiv;
+        break;
+      case "Social":
+        div = socialDiv;
+        break;
+      case "Self Care":
+        div = selfCareDiv;
+        break;
+      default:
+        div = null;
+    }
+
+    div.innerHTML = `<div class="flex justify-between">
+                        <h1>${item.title}</h1>
+                        <p>...</p>
+                      </div>
+                      <div class="flex justify-between items-end">
+                        <h1 class="text-2xl">${item[current]}hrs</h1>
+                        <h2 class="text-xs">Last Week - ${item[previous]}hrs</h2>
+                      </div>`;
+  });
+}
+dailyBtn.addEventListener("click", () => updateUI("daily"));
+weeklyBtn.addEventListener("click", () => updateUI("weekly"));
+monthlyBtn.addEventListener("click", () => updateUI("monthly"));
 fetchCardData();
-
-//   const workHTML = `<div class="flex justify-between">
-//                       <h1></h1>
-//                       <p>...</p>
-//                     </div>
-//                     <div class="flex justify-between items-end">
-//                       <h1 class="text-2xl">hrs</h1>
-//                       <h2 class="text-xs">Last Week - </h2>
-//                     </div>`;
-
-//   const playHTML = `<div class="flex justify-between">
-//                     <h1></h1>
-//                     <p>...</p>
-//                   </div>
-//                   <div class="flex justify-between items-end">
-//                     <h1 class="text-2xl">hrs</h1>
-//                     <h2 class="text-xs">Last Week - </h2>
-//                   </div>`;
-
-//   workDiv.innerHTML = workHTML;
-//   playDiv.innerHTML = playHTML;
