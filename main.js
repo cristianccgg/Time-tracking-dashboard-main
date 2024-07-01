@@ -61,8 +61,8 @@ function updateUI(timeframe) {
                         <h1>${item.title}</h1>
                         <p>...</p>
                       </div>
-                      <div class="flex justify-between items-end">
-                        <h1 class="text-2xl">${item[current]}hrs</h1>
+                      <div class="flex justify-between items-end sm:flex-col sm:items-start sm:gap-4">
+                        <h1 class="text-2xl lg:text-5xl md:text-3xl">${item[current]}hrs</h1>
                         <h2 class="text-xs">Last Week - ${item[previous]}hrs</h2>
                       </div>`;
   });

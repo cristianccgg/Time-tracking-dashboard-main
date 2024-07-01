@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -14,18 +13,16 @@
     <link href="./styles/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="/styles/styles.css" />
     <title>Frontend Mentor | Time tracking dashboard</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body class="bg-1-Very-dark-blue">
     <main
-      class="flex flex-col items-center py-16 min-h-screen sm:justify-center"
+      class="flex flex-col items-center py-16 min-h-screen sm:justify-center relative"
     >
       <div
-        class="main-container w-80 sm:grid sm:grid-rows-2 sm:grid-cols-4 sm:gap-4 sm:w-auto"
+        class="main-container w-80 sm:grid sm:grid-rows-2 sm:grid-cols-4 sm:gap-6 sm:w-auto"
       >
-        <div class="sm:col-span-1 sm:row-span-2">
-          <div class="flex bg-1-Blue rounded-xl p-8 gap-5 sm:h-56 sm:flex-col">
+        <div class="sm:col-span-1 sm:row-span-2 md:w-64">
+          <div class="flex bg-1-Blue rounded-xl p-8 gap-5 sm:h-72 sm:flex-col">
             <img
               class="w-16 h-16 border-4 rounded-full border-white"
               src="/images/image-jeremy.png"
@@ -33,15 +30,22 @@
             />
             <div class="text-white">
               <h2 class="sm:text-xs">Report for</h2>
-              <h1 class="text-2xl font-normal sm:text-3xl">Jeremy Robson</h1>
+              <h1 class="text-2xl font-normal sm:text-4xl sm:flex sm:flex-col">
+                <span>Jeremy</span>
+                <span>Robson</span>
+              </h1>
             </div>
           </div>
           <div
-            class="bg-2-Dark-blue sm:flex-col sm:h-24 sm:items-start sm:gap-1 sm:justify-center p-8 text-white flex justify-around h-12 items-center rounded-b-xl"
+            class="bg-2-Dark-blue sm:flex-col sm:h-36 sm:items-start sm:gap-1 sm:justify-center p-8 text-gray-400 flex justify-around h-12 items-center rounded-b-xl"
           >
-            <p id="daily-btn" class="cursor-pointer">Daily</p>
-            <p id="weekly-btn" class="cursor-pointer">Weekly</p>
-            <p id="monthly-btn" class="cursor-pointer">Monthly</p>
+            <p id="daily-btn" class="cursor-pointer hover:text-white">Daily</p>
+            <p id="weekly-btn" class="cursor-pointer hover:text-white">
+              Weekly
+            </p>
+            <p id="monthly-btn" class="cursor-pointer hover:text-white">
+              Monthly
+            </p>
           </div>
         </div>
         <div class="sm:col-span-1 sm:row-span-1">
@@ -50,14 +54,14 @@
           >
             <div
               id="work"
-              class="bg-2-Dark-blue rounded-xl text-white p-6 space-y-3 absolute top-8 w-full"
+              class="bg-2-Dark-blue rounded-xl text-white p-6 space-y-3 absolute top-8 w-full sm:h-44"
             >
               <div class="flex justify-between">
                 <h1>Work</h1>
                 <p>...</p>
               </div>
               <div class="flex justify-between items-end">
-                <h1 class="text-2xl">32hrs</h1>
+                <h1 class="text-2xl sm:text-4xl">32hrs</h1>
                 <h2 class="text-xs">Last Week - 36hrs</h2>
               </div>
             </div>
@@ -69,7 +73,7 @@
           >
             <div
               id="play"
-              class="bg-2-Dark-blue rounded-xl text-white p-6 space-y-3 absolute top-8 w-full"
+              class="bg-2-Dark-blue rounded-xl text-white p-6 space-y-3 absolute top-8 w-full sm:h-44"
             >
               <div class="flex justify-between">
                 <h1>Play</h1>
@@ -88,7 +92,7 @@
           >
             <div
               id="study"
-              class="bg-2-Dark-blue rounded-xl text-white p-6 space-y-3 absolute top-8 w-full"
+              class="bg-2-Dark-blue rounded-xl text-white p-6 space-y-3 absolute top-8 w-full sm:h-44"
             >
               <div class="flex justify-between">
                 <h1>Study</h1>
@@ -107,7 +111,7 @@
           >
             <div
               id="exercise"
-              class="bg-2-Dark-blue rounded-xl text-white p-6 space-y-3 absolute top-8 w-full"
+              class="bg-2-Dark-blue rounded-xl text-white p-6 space-y-3 absolute top-8 w-full sm:h-44"
             >
               <div class="flex justify-between">
                 <h1>Exercise</h1>
@@ -126,7 +130,7 @@
           >
             <div
               id="social"
-              class="bg-2-Dark-blue rounded-xl text-white p-6 space-y-3 absolute top-8 w-full"
+              class="bg-2-Dark-blue rounded-xl text-white p-6 space-y-3 absolute top-8 w-full sm:h-44"
             >
               <div class="flex justify-between">
                 <h1>Social</h1>
@@ -145,7 +149,7 @@
           >
             <div
               id="self-care"
-              class="bg-2-Dark-blue rounded-xl text-white p-6 space-y-3 absolute top-8 w-full"
+              class="bg-2-Dark-blue rounded-xl text-white p-6 space-y-3 absolute top-8 w-full sm:h-44"
             >
               <div class="flex justify-between">
                 <h1>Self Care</h1>
@@ -159,14 +163,15 @@
           </div>
         </div>
       </div>
+      <div class="attribution text-white absolute bottom-0">
+        Coded by
+        <a
+          class="text-yellow-300"
+          href="https://www.frontendmentor.io/profile/cristianccgg"
+          >Cristian Gutierrez</a
+        >.
+      </div>
     </main>
-
-    <!-- <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div> -->
   </body>
   <script src="/main.js"></script>
 </html>
