@@ -671,6 +671,30 @@ video {
   bottom: 0px;
 }
 
+.right-0 {
+  right: 0px;
+}
+
+.right-10 {
+  right: 2.5rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.-top-5 {
+  top: -1.25rem;
+}
+
+.-top-2 {
+  top: -0.5rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -852,6 +876,18 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.h-20 {
+  height: 5rem;
+}
+
+.h-10 {
+  height: 2.5rem;
 }
 
 .min-h-screen {
